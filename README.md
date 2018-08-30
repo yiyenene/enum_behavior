@@ -50,7 +50,7 @@ module Musics # Pluralized behavior defined class name
   end
 
   class Metal
-    # you can define plane class instead of using EnumBehavior::Base.
+    # you can define plain class instead of using EnumBehavior::Base.
     # Require constructor with 1 argument. (passes related ActiveRecord instance)
     def initialize(model)
       @model = model
