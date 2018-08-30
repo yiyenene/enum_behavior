@@ -30,7 +30,7 @@ end
 # You can do this at super class such as ApplicationRecord.
 ```
 
-1. Add `enum_behavior` after enum declaration.
+2. Add `enum_behavior` after enum declaration.
 
 ``` ruby
 class Music < ApplicationRecord
@@ -39,7 +39,7 @@ class Music < ApplicationRecord
 end
 ```
 
-1. Define class related enum values
+3. Define class related enum values
 
 ``` ruby
 module Musics # Pluralized behavior defined class name
@@ -65,7 +65,7 @@ module Musics # Pluralized behavior defined class name
 end
 ```
 
-1. Simple polymorphic behavior!
+4. Simple polymorphic behavior!
 
 ``` ruby
 m = Music.new(genre: :pop)
@@ -75,7 +75,7 @@ m.genre = :metal
 m.genre_behavior.message # => Love HeavyMetal!
 
 m.genre = :rock
-m.genre_behavior.message # => raise NameError uninitialized constant Musics::Rock
+m.genre_behavior.message # => NameError uninitialized constant Musics::Rock
 
 # You can use with delegate
 # delegate :message, to: :genre_behavior, prefix: :genre
